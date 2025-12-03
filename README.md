@@ -1,2 +1,1 @@
-# it_english_dictionary
-My portfolio project
+# English-Russian Dictionary - Full Stack Application
