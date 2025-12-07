@@ -10,7 +10,7 @@ import {
   Heart, 
 } from 'lucide-react';
 import styles from './App.module.css';
-import HeaderContainer from './components/layout/Header/HeaderContainer';
+import { Header } from './components/layout';
 
 function App() {
   // Mock topics data
@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className={styles.container}>
-			<HeaderContainer />
+			<Header />
 
       {/* ===== MAIN CONTENT ===== */}
       <main className={styles.main}>

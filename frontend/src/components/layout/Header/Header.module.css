@@ -78,6 +78,7 @@
 
 /* Mobile menu */
 .mobileMenu {
+	display: block;
   margin-top: 16px;
   padding-bottom: 16px;
 }
@@ -109,4 +110,19 @@
 
 .mobileMenuItem span {
   color: var(--white);
+}
+
+/* Tablet and small laptop (≥ 640px) */
+@media (min-width: 640px) {
+  .mobileMenuButton {
+    display: none;
+  }
+  
+  .iconButtons {
+    display: flex;
+  }
+  
+  .mobileMenu {
+    display: none !important;  /* Force hide on desktop */
+  }
 }
