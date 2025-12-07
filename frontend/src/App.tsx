@@ -1,9 +1,5 @@
-import { useState } from 'react';
 import { 
   Search, 
-  HelpCircle, 
-  User, 
-  Info, 
   BookOpen, 
   Database, 
   Code, 
@@ -12,14 +8,11 @@ import {
   MessageSquare, 
   Bug, 
   Heart, 
-  Menu, 
-  X 
 } from 'lucide-react';
 import styles from './App.module.css';
+import HeaderContainer from './components/layout/Header/HeaderContainer';
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   // Mock topics data
   const topics = [
     { id: 1, name: 'Database', icon: <Database />, wordCount: 42 },
@@ -39,59 +32,7 @@ function App() {
 
   return (
     <div className={styles.container}>
-      {/* ===== HEADER / HERO BAR ===== */}
-      <header className={styles.header}>
-        <div className={styles.headerContent}>
-          {/* Logo */}
-          <div className={styles.logoContainer}>
-            <div className={styles.logoIcon}>
-              <BookOpen />
-            </div>
-            <h1 className={styles.logoText}>ITEng Dictionary</h1>
-          </div>
-
-          {/* Desktop Icon Buttons */}
-          <div className={styles.iconButtons}>
-            <button className={styles.iconButton} title="Help">
-              <HelpCircle />
-            </button>
-            <button className={styles.iconButton} title="Profile">
-              <User />
-            </button>
-            <button className={styles.iconButton} title="Information">
-              <Info />
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button 
-            className={styles.mobileMenuButton}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className={styles.mobileMenu}>
-            <div className={styles.mobileMenuContent}>
-              <button className={styles.mobileMenuItem}>
-                <HelpCircle />
-                <span>Help</span>
-              </button>
-              <button className={styles.mobileMenuItem}>
-                <User />
-                <span>Profile</span>
-              </button>
-              <button className={styles.mobileMenuItem}>
-                <Info />
-                <span>Information</span>
-              </button>
-            </div>
-          </div>
-        )}
-      </header>
+			<HeaderContainer />
 
       {/* ===== MAIN CONTENT ===== */}
       <main className={styles.main}>
