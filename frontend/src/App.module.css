@@ -1,0 +1,679 @@
+/* === COLOR VARIABLES === */
+:root {
+  --cream: #EEDBBF;
+  --red-light: #AB3130;
+  --red-dark: #67191F;
+  --black: #121212;
+  --white: #FFFFFF;
+}
+
+/* === BASE CONTAINER === */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cream);
+}
+
+/* === HEADER / HERO BAR === */
+.header {
+  padding: 12px 16px;
+  background-color: var(--red-dark);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--red-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoIcon svg {
+  color: var(--white);
+  width: 20px;
+  height: 20px;
+}
+
+.logoText {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Desktop icon buttons */
+.iconButtons {
+  display: none;
+  align-items: center;
+  gap: 16px;
+}
+
+.iconButton {
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.iconButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.iconButton svg {
+  color: var(--white);
+  width: 22px;
+  height: 22px;
+}
+
+/* Mobile menu button */
+.mobileMenuButton {
+  display: block;
+  padding: 8px;
+}
+
+.mobileMenuButton svg {
+  color: var(--white);
+  width: 24px;
+  height: 24px;
+}
+
+/* Mobile menu */
+.mobileMenu {
+  margin-top: 16px;
+  padding-bottom: 16px;
+}
+
+.mobileMenuContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobileMenuItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.mobileMenuItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobileMenuItem svg {
+  color: var(--white);
+  width: 20px;
+  height: 20px;
+}
+
+.mobileMenuItem span {
+  color: var(--white);
+}
+
+/* === MAIN CONTENT === */
+.main {
+  flex: 1;
+  padding: 24px 12px;
+}
+
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.heroTitle {
+  color: var(--red-dark);
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  padding: 0 8px;
+}
+
+/* Search bar */
+.searchContainer {
+  max-width: 100%;
+  margin: 24px auto 0;
+  padding: 0 12px;
+}
+
+.searchWrapper {
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 9999px;
+  border: 2px solid var(--red-light);
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.searchInput:focus {
+  border-color: #3B82F6;
+}
+
+.searchButton {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 8px;
+  border-radius: 50%;
+  background-color: var(--red-light);
+}
+
+.searchButton svg {
+  color: var(--white);
+  width: 20px;
+  height: 20px;
+}
+
+.heroSubtitle {
+  color: var(--black);
+  font-size: 16px;
+  margin-top: 16px;
+  padding: 0 12px;
+}
+
+.heroSubtitle span {
+  font-weight: bold;
+  color: var(--red-dark);
+}
+
+/* Subscription card */
+.subscriptionSection {
+  margin-bottom: 32px;
+  padding: 0 12px;
+}
+
+.subscriptionCard {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: var(--white);
+  border-radius: 16px;
+  border: 2px solid var(--red-light);
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.subscriptionHeader {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.subscriptionTitle {
+  color: var(--red-dark);
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.subscriptionBadge {
+  align-self: flex-start;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background-color: var(--red-light);
+  color: var(--cream);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.subscriptionExpires {
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.subscriptionFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.featureDot {
+  min-width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--red-dark);
+  margin-right: 8px;
+}
+
+.upgradeButton {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--red-dark);
+  color: var(--cream);
+  font-weight: bold;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.upgradeButton:hover {
+  opacity: 0.9;
+}
+
+/* Topics grid */
+.topicsSection {
+  margin-bottom: 32px;
+  padding: 0 12px;
+}
+
+.topicsTitle {
+  color: var(--red-dark);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.topicsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.topicCard {
+  background-color: var(--white);
+  border-radius: 16px;
+  border: 2px solid var(--red-light);
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.topicCard:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: scale(1.01);
+}
+
+.topicHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.topicInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topicIcon {
+  padding: 8px;
+  border-radius: 50%;
+  background-color: var(--red-dark);
+}
+
+.topicIcon svg {
+  color: var(--white);
+  width: 20px;
+  height: 20px;
+}
+
+.topicName {
+  color: var(--red-dark);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.topicWordCount {
+  padding: 4px 8px;
+  border-radius: 9999px;
+  background-color: var(--cream);
+  font-size: 12px;
+}
+
+.topicDescription {
+  color: var(--black);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.favoriteButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--red-light);
+}
+
+.favoriteButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Guides section */
+.guidesSection {
+  margin-bottom: 32px;
+  padding: 0 12px;
+}
+
+.guidesTitle {
+  color: var(--red-dark);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.guidesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.guideCard {
+  background-color: var(--white);
+  border-radius: 16px;
+  border: 2px solid var(--red-light);
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.guideTitle {
+  color: var(--red-dark);
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.guideDescription {
+  color: var(--black);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.guideButton {
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--red-light);
+}
+
+/* === FOOTER === */
+.footer {
+  padding: 24px 12px;
+  background-color: var(--red-dark);
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.footerColumn h3 {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.footerColumn p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.footerList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footerList button {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  text-align: left;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footerList button:hover {
+  color: var(--white);
+}
+
+.footerList svg {
+  width: 16px;
+  height: 16px;
+}
+
+.socialButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.socialButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--red-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 14px;
+}
+
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 24px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+/* === MEDIA QUERIES FOR RESPONSIVENESS === */
+
+/* Tablet and small laptop (≥ 640px) */
+@media (min-width: 640px) {
+  .header {
+    padding: 16px 24px;
+  }
+  
+  .logoIcon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .logoIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .logoText {
+    font-size: 22px;
+  }
+  
+  .mobileMenuButton {
+    display: none;
+  }
+  
+  .iconButtons {
+    display: flex;
+  }
+  
+  .main {
+    padding: 32px 16px;
+  }
+  
+  .heroTitle {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  
+  .searchContainer {
+    max-width: 500px;
+  }
+  
+  .searchInput {
+    padding: 16px 24px;
+    font-size: 18px;
+  }
+  
+  .searchButton {
+    padding: 12px;
+  }
+  
+  .searchButton svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .heroSubtitle {
+    font-size: 18px;
+    margin-top: 24px;
+  }
+  
+  .subscriptionCard {
+    max-width: 400px;
+    padding: 24px;
+  }
+  
+  .subscriptionHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .subscriptionTitle {
+    margin-bottom: 0;
+    font-size: 24px;
+  }
+  
+  .subscriptionBadge {
+    align-self: center;
+  }
+  
+  .subscriptionExpires {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .subscriptionFeatures {
+    gap: 12px;
+  }
+  
+  .featureItem {
+    font-size: 16px;
+  }
+  
+  .upgradeButton {
+    padding: 16px;
+    font-size: 16px;
+  }
+  
+  .topicsTitle {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .topicsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .topicCard:hover {
+    transform: scale(1.02);
+  }
+  
+  .guidesTitle {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .guidesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .footer {
+    padding: 32px 16px;
+  }
+  
+  .footerGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+/* Desktop (≥ 1024px) */
+@media (min-width: 1024px) {
+  .heroTitle {
+    font-size: 36px;
+  }
+  
+  .searchContainer {
+    max-width: 600px;
+  }
+  
+  .topicsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .footerGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .socialButton {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+/* Large desktop (≥ 1280px) */
+@media (min-width: 1280px) {
+  .heroTitle {
+    font-size: 48px;
+  }
+  
+  .heroSubtitle {
+    font-size: 20px;
+  }
+}
