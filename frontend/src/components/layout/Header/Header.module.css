@@ -1,128 +1,148 @@
 /* === HEADER / HERO BAR === */
 .header {
-  padding: 12px 16px;
-  background-color: var(--red-dark);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	padding: 12px 16px;
+	background-color: var(--red-dark);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .headerContent {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .logoContainer {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
 
 .logoIcon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: var(--red-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: var(--red-light);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .logoIcon svg {
-  color: var(--white);
-  width: 20px;
-  height: 20px;
+	color: var(--white);
+	width: 20px;
+	height: 20px;
 }
 
 .logoText {
-  color: var(--white);
-  font-size: 18px;
-  font-weight: bold;
+	color: var(--white);
+	font-size: 18px;
+	font-weight: bold;
 }
 
 /* Desktop icon buttons */
 .iconButtons {
-  display: none;
-  align-items: center;
-  gap: 16px;
+	display: none;
+	align-items: center;
+	gap: 16px;
 }
 
 .iconButton {
-  padding: 8px;
-  border-radius: 50%;
-  transition: background-color 0.2s;
+	padding: 8px;
+	border-radius: 50%;
+	transition: background-color 0.2s;
 }
 
 .iconButton:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.1);
 }
 
 .iconButton svg {
-  color: var(--white);
-  width: 22px;
-  height: 22px;
+	color: var(--white);
+	width: 22px;
+	height: 22px;
 }
 
 /* Mobile menu button */
 .mobileMenuButton {
-  display: block;
-  padding: 8px;
+	display: block;
+	padding: 8px;
 }
 
 .mobileMenuButton svg {
-  color: var(--white);
-  width: 24px;
-  height: 24px;
+	color: var(--white);
+	width: 24px;
+	height: 24px;
 }
 
 /* Mobile menu */
 .mobileMenu {
 	display: block;
-  margin-top: 16px;
-  padding-bottom: 16px;
+	margin-top: 16px;
+	padding-bottom: 16px;
 }
 
 .mobileMenuContent {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
 
 .mobileMenuItem {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px;
-  border-radius: 8px;
-  transition: background-color 0.2s;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 12px;
+	border-radius: 8px;
+	transition: background-color 0.2s;
 }
 
 .mobileMenuItem:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.1);
 }
 
 .mobileMenuItem svg {
-  color: var(--white);
-  width: 20px;
-  height: 20px;
+	color: var(--white);
+	width: 20px;
+	height: 20px;
 }
 
 .mobileMenuItem span {
-  color: var(--white);
+	color: var(--white);
 }
+
+/* === MEDIA QUERIES FOR RESPONSIVENESS === */
 
 /* Tablet and small laptop (≥ 640px) */
 @media (min-width: 640px) {
-  .mobileMenuButton {
-    display: none;
-  }
-  
-  .iconButtons {
-    display: flex;
-  }
-  
-  .mobileMenu {
-    display: none !important;  /* Force hide on desktop */
-  }
+	.header {
+		padding: 16px 24px;
+	}
+
+	.logoIcon {
+		width: 40px;
+		height: 40px;
+	}
+
+	.logoIcon svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	.logoText {
+		font-size: 22px;
+	}
+
+	.mobileMenuButton {
+		display: none;
+	}
+
+	.iconButtons {
+		display: flex;
+	}
+
+	.mobileMenu {
+		display: none !important;
+	}
 }

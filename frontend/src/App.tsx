@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import styles from './App.module.css';
 import { Header } from './components/layout';
+import SearchBarContainer from './components/features/SearchBar/SearchBarContainer';
 
 function App() {
   // Mock topics data
@@ -45,18 +46,7 @@ function App() {
             </h1>
             
             {/* Search Bar */}
-            <div className={styles.searchContainer}>
-              <div className={styles.searchWrapper}>
-                <input
-                  type="text"
-                  placeholder="Search for IT terms, commands, or concepts..."
-                  className={styles.searchInput}
-                />
-                <button className={styles.searchButton}>
-                  <Search />
-                </button>
-              </div>
-            </div>
+						<SearchBarContainer />
 
             <p className={styles.heroSubtitle}>
               The brand new English-Russian dictionary for <span>beginner to advanced levels</span> proficiency
