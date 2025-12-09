@@ -1,5 +1,4 @@
 import { 
-  Search, 
   BookOpen, 
   Database, 
   Code, 
@@ -11,7 +10,7 @@ import {
 } from 'lucide-react';
 import styles from './App.module.css';
 import { Header } from './components/layout';
-import SearchBarContainer from './components/features/SearchBar/SearchBarContainer';
+import { SearchBar, SubscriptionCard } from './components/features';
 
 function App() {
   // Mock topics data
@@ -23,13 +22,6 @@ function App() {
     { id: 5, name: 'Backend', icon: <Server />, wordCount: 47 },
     { id: 6, name: 'Network', icon: <Code />, wordCount: 29 }
   ];
-
-  // Mock subscription data
-  const subscription = {
-    plan: 'Free',
-    expires: '2024-12-31',
-    features: ['100 words daily', 'Basic search', '5 favorites limit']
-  };
 
   return (
     <div className={styles.container}>
@@ -46,7 +38,7 @@ function App() {
             </h1>
             
             {/* Search Bar */}
-						<SearchBarContainer />
+						<SearchBar/>
 
             <p className={styles.heroSubtitle}>
               The brand new English-Russian dictionary for <span>beginner to advanced levels</span> proficiency
@@ -54,33 +46,7 @@ function App() {
           </section>
 
           {/* Subscription Card */}
-          <section className={styles.subscriptionSection}>
-            <div className={styles.subscriptionCard}>
-              <div className={styles.subscriptionHeader}>
-                <h2 className={styles.subscriptionTitle}>Your Subscription</h2>
-                <span className={styles.subscriptionBadge}>
-                  {subscription.plan}
-                </span>
-              </div>
-              
-              <p className={styles.subscriptionExpires}>
-                Expires: <strong>{subscription.expires}</strong>
-              </p>
-              
-              <ul className={styles.subscriptionFeatures}>
-                {subscription.features.map((feature, index) => (
-                  <li key={index} className={styles.featureItem}>
-                    <div className={styles.featureDot}></div>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              
-              <button className={styles.upgradeButton}>
-                Upgrade Plan
-              </button>
-            </div>
-          </section>
+					<SubscriptionCard />
 
           {/* Topics Grid */}
           <section className={styles.topicsSection}>

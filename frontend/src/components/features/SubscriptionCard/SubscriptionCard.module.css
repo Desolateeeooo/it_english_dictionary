@@ -1,0 +1,123 @@
+/* Subscription card */
+.subscriptionSection {
+  margin-bottom: 32px;
+  padding: 0 12px;
+}
+
+.subscriptionCard {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: var(--white);
+  border-radius: 16px;
+  border: 2px solid var(--red-light);
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.subscriptionHeader {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.subscriptionTitle {
+  color: var(--red-dark);
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.subscriptionBadge {
+  align-self: flex-start;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background-color: var(--red-light);
+  color: var(--cream);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.subscriptionExpires {
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.subscriptionFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.featureDot {
+  min-width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--red-dark);
+  margin-right: 8px;
+}
+
+.upgradeButton {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--red-dark);
+  color: var(--cream);
+  font-weight: bold;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.upgradeButton:hover {
+  opacity: 0.9;
+}
+
+/* === MEDIA QUERIES FOR RESPONSIVENESS === */
+
+/* Tablet and small laptop (≥ 640px) */
+@media (min-width: 640px) {  
+  .subscriptionCard {
+    max-width: 400px;
+    padding: 24px;
+  }
+  
+  .subscriptionHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .subscriptionTitle {
+    margin-bottom: 0;
+    font-size: 24px;
+  }
+  
+  .subscriptionBadge {
+    align-self: center;
+  }
+  
+  .subscriptionExpires {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .subscriptionFeatures {
+    gap: 12px;
+  }
+  
+  .featureItem {
+    font-size: 16px;
+  }
+  
+  .upgradeButton {
+    padding: 16px;
+    font-size: 16px;
+  }
+}
