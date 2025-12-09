@@ -1,28 +1,13 @@
 import { 
-  BookOpen, 
-  Database, 
-  Code, 
-  Server, 
   Mail, 
   MessageSquare, 
   Bug, 
-  Heart, 
 } from 'lucide-react';
 import styles from './App.module.css';
 import { Header } from './components/layout';
 import { SearchBar, SubscriptionCard, TopicsGrid } from './components/features';
 
 function App() {
-  // Mock topics data
-  const topics = [
-    { id: 1, name: 'Database', icon: <Database />, wordCount: 42 },
-    { id: 2, name: 'Programming', icon: <Code />, wordCount: 68 },
-    { id: 3, name: 'DevOps', icon: <Server />, wordCount: 35 },
-    { id: 4, name: 'Frontend', icon: <BookOpen />, wordCount: 54 },
-    { id: 5, name: 'Backend', icon: <Server />, wordCount: 47 },
-    { id: 6, name: 'Network', icon: <Code />, wordCount: 29 }
-  ];
-
   return (
     <div className={styles.container}>
 			<Header />
