@@ -5,7 +5,7 @@ import {
 } from 'lucide-react';
 import styles from './App.module.css';
 import { Header } from './components/layout';
-import { GuidesSection, SearchBar, SubscriptionCard, TopicsGrid } from './components/features';
+import { GuidesSection, SearchBar, SubscriptionCard, TopicsGrid } from './components/features/home';
 
 function App() {
   return (
