@@ -1,0 +1,59 @@
+/* Guides section */
+.guidesSection {
+  margin-bottom: 32px;
+  padding: 0 12px;
+}
+
+.guidesTitle {
+  color: var(--red-dark);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.guidesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.guideCard {
+  background-color: var(--white);
+  border-radius: 16px;
+  border: 2px solid var(--red-light);
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.guideTitle {
+  color: var(--red-dark);
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.guideDescription {
+  color: var(--black);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.guideButton {
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--red-light);
+}
+
+/* Tablet and small laptop (≥ 640px) */
+@media (min-width: 640px) {
+  .guidesTitle {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .guidesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
