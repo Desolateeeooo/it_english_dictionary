@@ -1,6 +1,7 @@
 /* === COLOR VARIABLES === */
 :root {
 	--cream: #EEDBBF;
+	--cream-gradient: linear-gradient(#EEDBBF, #DFCDB3, #887D6D);
 	--red-light: #AB3130;
 	--red-dark: #67191F;
 	--black: #121212;

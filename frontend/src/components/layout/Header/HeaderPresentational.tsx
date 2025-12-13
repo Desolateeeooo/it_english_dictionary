@@ -1,6 +1,7 @@
 import { BookOpen, HelpCircle, Info, Menu, User, X } from "lucide-react";
 import styles from "./Header.module.css";
 import type { Dispatch, SetStateAction } from "react";
+import { Link } from "react-router-dom";
 
 interface IHeaderPresentational {
 	isMenuOpen: boolean;
@@ -24,9 +25,9 @@ function HeaderPresentational({isMenuOpen, setIsMenuOpen}: IHeaderPresentational
             <button className={styles.iconButton} title="Help">
               <HelpCircle />
             </button>
-            <button className={styles.iconButton} title="Profile">
+            <Link to="/signin" className={styles.iconButton} title="Profile">
               <User />
-            </button>
+            </Link>
             <button className={styles.iconButton} title="Information">
               <Info />
             </button>
