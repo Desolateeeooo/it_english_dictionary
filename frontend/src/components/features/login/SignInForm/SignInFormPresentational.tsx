@@ -1,12 +1,13 @@
 import styles from "./SignInForm.module.css";
+import { InputPassword, InputUsername } from "..";
+
 function SignInFormPresentational() {
 	return (
 		<section className={styles.sign_in_form}>
 			<h2>Sign in</h2>
 			<form action="">
-				<input type="text" name="sign-in-login" placeholder="Username" />
-				<input type="password" name="sign-in-password" placeholder="Password" />
-				{/*<button className={styles.show_password_btn}>SHOW</button> */}
+				<InputUsername />
+				<InputPassword />
 				<div className={styles.flex_container}>
 					<div className={styles.flex_container} style={{ justifyContent: "flex-start", marginTop: 0 }}>
 						<input type="checkbox" name="sign-in-remember-me" />
