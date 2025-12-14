@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import styles from "./InputPassword.module.css";
 import { Lock } from "lucide-react";
+import { InputWrapper } from "../../../layout";
 
 interface IInputPassword {
 	showPassword: boolean;
@@ -9,7 +10,7 @@ interface IInputPassword {
 
 function InputPasswordPresentational({ showPassword, setShowPassword }: IInputPassword) {
 	return (
-		<div className={styles.input_wrapper}>
+		<InputWrapper>
 			<input type="password" name="sign-in-password" placeholder="Password" className={styles.input_field} />
 			<Lock className={styles.input_icon} size={20} />
 			<button
@@ -19,7 +20,7 @@ function InputPasswordPresentational({ showPassword, setShowPassword }: IInputPa
 			>
 				{showPassword ? "HIDE" : "SHOW"}
 			</button>
-		</div>
+		</InputWrapper>
 	);
 }
 
