@@ -1,23 +1,12 @@
-/* === MAIN CONTAINER === */
-.container {
-  background-image: var(--cream-gradient);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* This centers vertically */
-  padding: 20px;
-}
-
 /* === WHITE CARD === */
 .main {
   background-color: var(--white);
   width: 1060px;
-  min-height: 702px; /* Changed from fixed height */
+  min-height: 702px;
   border-radius: 50px;
   display: grid;
-  grid-template-columns: 1fr; /* Two equal columns */
-  grid-template-rows: 1fr; /* Single row taking full height */
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   gap: 20px;
   padding: 60px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
