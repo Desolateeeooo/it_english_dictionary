@@ -5,18 +5,20 @@ import { InputWrapper } from "../../../layout";
 
 interface IInputPassword {
 	showPassword: boolean;
-	setShowPassword: Dispatch<SetStateAction<boolean>>
+	setShowPassword: Dispatch<SetStateAction<boolean>>;
+	inputType: string;
+	onClickHandler: () => void;
 }
 
-function InputPasswordPresentational({ showPassword, setShowPassword }: IInputPassword) {
+function InputPasswordPresentational({ showPassword, setShowPassword, inputType, onClickHandler }: IInputPassword) {
 	return (
 		<InputWrapper>
-			<input type="password" name="sign-in-password" placeholder="Password" className={styles.input_field} />
+			<input type={inputType} name="sign-in-password" placeholder="Password" className={styles.input_field} />
 			<Lock className={styles.input_icon} size={20} />
 			<button
 				type="button"
 				className={styles.password_toggle}
-				onClick={() => setShowPassword(!showPassword)}
+				onClick={onClickHandler}
 			>
 				{showPassword ? "HIDE" : "SHOW"}
 			</button>
