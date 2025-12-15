@@ -1,16 +1,14 @@
-import type { Dispatch, SetStateAction } from "react";
 import styles from "./InputPassword.module.css";
 import { Lock } from "lucide-react";
 import { InputWrapper } from "../../../layout";
 
 interface IInputPassword {
 	showPassword: boolean;
-	setShowPassword: Dispatch<SetStateAction<boolean>>;
 	inputType: string;
 	onClickHandler: () => void;
 }
 
-function InputPasswordPresentational({ showPassword, setShowPassword, inputType, onClickHandler }: IInputPassword) {
+function InputPasswordPresentational({ showPassword, inputType, onClickHandler }: IInputPassword) {
 	return (
 		<InputWrapper>
 			<input type={inputType} name="sign-in-password" placeholder="Password" className={styles.input_field} />

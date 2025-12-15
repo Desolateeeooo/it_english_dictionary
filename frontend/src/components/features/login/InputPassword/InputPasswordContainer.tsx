@@ -12,7 +12,6 @@ function InputPasswordContainer() {
 
 	return <InputPasswordPresentational
 		showPassword={showPassword}
-		setShowPassword={setShowPassword}
 		inputType={inputType}
 		onClickHandler={onClickHandler} />
 }
