@@ -1,15 +1,13 @@
-import { SignInButtons, SignInForm } from "../../components/features/login";
 import { LoginWhiteCard, MainContainer } from "../../components/ui";
 
-function SignInPage() {
+function SignUpPage() {
 	return (
 		<MainContainer style={{ backgroundImage: "var(--cream-gradient)", padding: 20 }}>
 			<LoginWhiteCard>
-				<SignInForm />
-				<SignInButtons />
+				<h1>Sign Up</h1>
 			</LoginWhiteCard>
 		</MainContainer>
 	);
 }
 
-export default SignInPage;
+export default SignUpPage;

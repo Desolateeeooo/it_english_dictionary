@@ -3,7 +3,7 @@ import styles from "./MainContainer.module.css";
 
 interface IMainContainer {
 	children: ReactNode;
-	style: CSSProperties;
+	style?: CSSProperties;
 }
 
 function MainContainerPresentational({children, style}: IMainContainer) {
