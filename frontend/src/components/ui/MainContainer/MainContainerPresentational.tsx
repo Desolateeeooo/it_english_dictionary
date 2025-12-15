@@ -1,12 +1,12 @@
 import type { CSSProperties, ReactNode } from "react";
 import styles from "./MainContainer.module.css";
 
-interface IFlexContainer {
+interface IMainContainer {
 	children: ReactNode;
 	style: CSSProperties;
 }
 
-function MainContainerPresentational({children, style}: IFlexContainer) {
+function MainContainerPresentational({children, style}: IMainContainer) {
 	return (
 		<div className={styles.container} style={style}>
 			{children}

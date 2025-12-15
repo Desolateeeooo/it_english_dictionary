@@ -1,5 +1,5 @@
 import { SignInButtons, SignInForm } from "../../components/features/login";
-import { MainContainer } from "../../components/layout";
+import { MainContainer } from "../../components/ui";
 import styles from "./SignInPage.module.css";
 
 function SignInPage() {
