@@ -17,8 +17,7 @@
 }
 
 @media (max-width: 480px) {  
-  .primary_btn,
-  .secondary_btn {
+  .primary_btn {
     padding: 16px;
     font-size: 18px;
   }

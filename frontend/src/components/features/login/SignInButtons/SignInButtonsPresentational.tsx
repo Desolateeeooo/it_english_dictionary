@@ -1,4 +1,4 @@
-import { FlexContainer, PrimaryButton } from "../../../ui";
+import { FlexContainer, PrimaryButton, SecondaryButton } from "../../../ui";
 import styles from "./SignInButtons.module.css";
 
 function SignInButtonsPresentational() {
@@ -10,7 +10,7 @@ function SignInButtonsPresentational() {
 				<p>or</p>
 				<hr />
 			</FlexContainer>
-			<button className={styles.secondary_btn}>Sign in with the other</button>
+			<SecondaryButton text={"Sign in with the other"}/>
 			<FlexContainer style={{ justifyContent: "flex-start" }} >
 				<button className={styles.btn_dont_have_acc}>Don't have an account?</button>
 				<button className={styles.btn_sign_up}>Sign up</button>
