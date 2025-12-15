@@ -1,5 +1,6 @@
 import styles from "./SignInForm.module.css";
 import { InputPassword, InputUsername } from "..";
+import { FlexContainer } from "../../../ui";
 
 function SignInFormPresentational() {
 	return (
@@ -8,13 +9,13 @@ function SignInFormPresentational() {
 			<form action="">
 				<InputUsername />
 				<InputPassword />
-				<div className={styles.flex_container}>
+				<FlexContainer>
 					<div className={styles.flex_container} style={{ justifyContent: "flex-start", marginTop: 0 }}>
 						<input type="checkbox" name="sign-in-remember-me" />
 						<label htmlFor="sign-in-remember-me">Remember me</label>
 					</div>
 					<button className={styles.btn_forgot_password}>Forgot password?</button>
-				</div>
+				</FlexContainer>
 			</form>
 		</section>
 	);

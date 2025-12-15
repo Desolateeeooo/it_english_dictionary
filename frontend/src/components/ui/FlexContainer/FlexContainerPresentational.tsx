@@ -3,7 +3,7 @@ import styles from "./FlexContainer.module.css";
 
 interface IFlexContainer {
 	children: ReactNode;
-	style: CSSProperties;
+	style?: CSSProperties;
 }
 
 function FlexContainerPresentational({children, style}: IFlexContainer) {
