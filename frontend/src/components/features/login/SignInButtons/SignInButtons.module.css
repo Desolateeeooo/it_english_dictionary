@@ -13,24 +13,6 @@
   gap: 25px;
 }
 
-.primary_btn {
-  background-color: var(--red-dark);
-  color: var(--white);
-  padding: 20px;
-  border: none;
-  border-radius: 12px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.primary_btn:hover {
-  background-color: var(--red-light);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(171, 49, 48, 0.3);
-}
-
 .sign_in_btns hr {
   border: none;
   height: 1px;
@@ -88,13 +70,5 @@
 @media (max-width: 768px) {
   .sign_in_btns {
     padding-left: 0;
-  }
-}
-
-@media (max-width: 480px) {  
-  .primary_btn,
-  .secondary_btn {
-    padding: 16px;
-    font-size: 18px;
   }
 }

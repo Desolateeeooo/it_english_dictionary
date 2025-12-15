@@ -1,10 +1,10 @@
-import { FlexContainer } from "../../../ui";
+import { FlexContainer, PrimaryButton } from "../../../ui";
 import styles from "./SignInButtons.module.css";
 
 function SignInButtonsPresentational() {
 	return (
 		<section className={styles.sign_in_btns}>
-			<button className={styles.primary_btn}>Sign in</button>
+			<PrimaryButton text={"Sign in"}/>
 			<FlexContainer style={{ gap: 20 }}>
 				<hr />
 				<p>or</p>
