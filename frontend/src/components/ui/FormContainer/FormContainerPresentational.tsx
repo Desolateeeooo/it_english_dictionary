@@ -10,7 +10,9 @@ function FormContainerPresentational({ header, children }: IFormContainer) {
 	return (
 		<section className={styles.sign_in_form}>
 			<h2>{header}</h2>
-			{children}
+			<form action="">
+				{children}
+			</form>
 		</section>
 	);
 }

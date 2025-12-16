@@ -6,7 +6,11 @@ function SignInPage() {
 		<MainContainer style={{ backgroundImage: "var(--cream-gradient)", padding: 20 }}>
 			<LoginWhiteCard>
 				<SignInForm />
-				<SignInButtons />
+				<SignInButtons
+					link="/signup"
+					linkTitle="Sign Up"
+					linkButtonText="Sign up"
+					helperButtonText="Don't have an account?" />
 			</LoginWhiteCard>
 		</MainContainer>
 	);

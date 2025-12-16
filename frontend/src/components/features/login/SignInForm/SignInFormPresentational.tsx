@@ -5,7 +5,6 @@ import { FlexContainer, FormContainer } from "../../../ui";
 function SignInFormPresentational() {
 	return (
 		<FormContainer header={"Sign in"}>
-			<form action="">
 				<InputUsername />
 				<InputPassword />
 				<FlexContainer>
@@ -15,7 +14,6 @@ function SignInFormPresentational() {
 					</div>
 					<button className={styles.btn_forgot_password}>Forgot password?</button>
 				</FlexContainer>
-			</form>
 		</FormContainer>
 	);
 }
