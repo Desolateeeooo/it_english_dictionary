@@ -5,7 +5,7 @@ import { InputWrapper } from "../../../layout";
 function InputUsernamePresentational() {
 	return (
 		<InputWrapper>
-			<input type="text" name="sign-in-login" placeholder="Username" className={styles.input_field} />
+			<input type="text" name="sign-in-username" placeholder="Username" className={styles.input_field} />
 			<User className={styles.input_icon} size={20} />
 		</InputWrapper>
 	);

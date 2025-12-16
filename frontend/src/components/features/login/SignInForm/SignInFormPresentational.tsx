@@ -1,11 +1,10 @@
 import styles from "./SignInForm.module.css";
 import { InputPassword, InputUsername } from "..";
-import { FlexContainer } from "../../../ui";
+import { FlexContainer, FormContainer } from "../../../ui";
 
 function SignInFormPresentational() {
 	return (
-		<section className={styles.sign_in_form}>
-			<h2>Sign in</h2>
+		<FormContainer header={"Sign in"}>
 			<form action="">
 				<InputUsername />
 				<InputPassword />
@@ -17,7 +16,7 @@ function SignInFormPresentational() {
 					<button className={styles.btn_forgot_password}>Forgot password?</button>
 				</FlexContainer>
 			</form>
-		</section>
+		</FormContainer>
 	);
 }
 

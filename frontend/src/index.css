@@ -44,3 +44,7 @@ button {
 ul, ol {
   list-style: none;
 }
+
+input::placeholder {
+  color: rgba(18, 18, 18, 0.5);
+}
