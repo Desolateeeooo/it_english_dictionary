@@ -14,7 +14,8 @@ function SignUpPage() {
 					link="/signin"
 					linkTitle="Sign In"
 					linkButtonText="Sign in"
-					helperButtonText="Already have an account?" />
+					helperButtonText="Already have an account?"
+					primaryButtonText="Sign up" />
 			</LoginWhiteCard>
 		</MainContainer>
 	);

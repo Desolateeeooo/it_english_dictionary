@@ -10,7 +10,8 @@ function SignInPage() {
 					link="/signup"
 					linkTitle="Sign Up"
 					linkButtonText="Sign up"
-					helperButtonText="Don't have an account?" />
+					helperButtonText="Don't have an account?"
+					primaryButtonText="Sign in" />
 			</LoginWhiteCard>
 		</MainContainer>
 	);

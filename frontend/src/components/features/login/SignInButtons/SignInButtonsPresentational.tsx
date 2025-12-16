@@ -7,12 +7,13 @@ interface ISignInButtons {
 	linkTitle: string;
 	linkButtonText: string;
 	helperButtonText: string;
+	primaryButtonText: string;
 }
 
-function SignInButtonsPresentational({ link, linkTitle, linkButtonText, helperButtonText }: ISignInButtons) {
+function SignInButtonsPresentational({ link, linkTitle, linkButtonText, helperButtonText, primaryButtonText }: ISignInButtons) {
 	return (
 		<section className={styles.sign_in_btns}>
-			<PrimaryButton text={"Sign in"} />
+			<PrimaryButton text={primaryButtonText} />
 			<FlexContainer style={{ gap: 20 }}>
 				<hr />
 				<p>or</p>
