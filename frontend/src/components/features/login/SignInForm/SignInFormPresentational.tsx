@@ -1,11 +1,11 @@
 import styles from "./SignInForm.module.css";
-import { InputPassword, InputUsername } from "..";
+import { InputEmail, InputPassword } from "..";
 import { FlexContainer, FormContainer } from "../../../ui";
 
 function SignInFormPresentational() {
 	return (
 		<FormContainer header={"Sign in"}>
-				<InputUsername />
+				<InputEmail />
 				<InputPassword />
 				<FlexContainer>
 					<div className={styles.flex_container} style={{ justifyContent: "flex-start", marginTop: 0 }}>

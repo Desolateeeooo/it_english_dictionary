@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { FlexContainer, PrimaryButton, SecondaryButton } from "../../../ui";
+import { FlexContainer, PrimaryButton } from "../../../ui";
 import styles from "./SignInButtons.module.css";
+import { SocialLoginButtons } from "../../oauth";
 
 interface ISignInButtons {
 	link: string;
@@ -19,7 +20,8 @@ function SignInButtonsPresentational({ link, linkTitle, linkButtonText, helperBu
 				<p>or</p>
 				<hr />
 			</FlexContainer>
-			<SecondaryButton text={"Sign in with the other"} />
+			<SocialLoginButtons />
+			{/*<SecondaryButton text={"Sign in with the other"} /> */}
 			<FlexContainer style={{ justifyContent: "flex-start" }} >
 				<Link to={link} title={linkTitle}>
 				<button className={styles.btn_dont_have_acc}>{helperButtonText}</button>
