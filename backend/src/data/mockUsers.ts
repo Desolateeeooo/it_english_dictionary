@@ -10,13 +10,12 @@ export const mockUsers: User[] = [
     id: 1,
     username: 'demo_user',
     email: 'demo@itdictionary.com',
-    password: 'password123'
+    password: 'password123',
   },
   {
     id: 2,
     username: 'developer',
     email: 'dev@example.com',
-    password: 'securepass'
-  }
+    password: 'securepass',
+  },
 ];
-

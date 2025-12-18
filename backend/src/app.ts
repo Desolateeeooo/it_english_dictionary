@@ -1,1 +1,2 @@
-const session = require("express-session")
+import * as session from 'express-session';
+
