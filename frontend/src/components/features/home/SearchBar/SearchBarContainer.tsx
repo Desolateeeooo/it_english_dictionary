@@ -1,7 +1,7 @@
-import SearchBarPresentational from "./SearchBarPresentational";
+import SearchBarPresentational from './SearchBarPresentational';
 
 function SearchBarContainer() {
-	return <SearchBarPresentational />
+  return <SearchBarPresentational />;
 }
 
 export default SearchBarContainer;

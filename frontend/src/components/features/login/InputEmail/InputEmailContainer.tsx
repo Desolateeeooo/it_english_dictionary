@@ -1,7 +1,7 @@
-import InputEmailPresentational from "./InputEmailPresentational";
+import InputEmailPresentational from './InputEmailPresentational';
 
 function InputEmailContainer() {
-	return <InputEmailPresentational />;
+  return <InputEmailPresentational />;
 }
 
 export default InputEmailContainer;

@@ -51,7 +51,7 @@
     font-size: 24px;
     margin-bottom: 32px;
   }
-  
+
   .guidesGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;

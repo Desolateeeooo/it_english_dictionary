@@ -1,7 +1,7 @@
-import InputUsernamePresentational from "./InputUsernamePresentational";
+import InputUsernamePresentational from './InputUsernamePresentational';
 
 function InputUsernameContainer() {
-	return <InputUsernamePresentational />
+  return <InputUsernamePresentational />;
 }
 
 export default InputUsernameContainer;

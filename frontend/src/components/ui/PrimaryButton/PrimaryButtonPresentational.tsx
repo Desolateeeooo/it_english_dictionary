@@ -1,13 +1,11 @@
-import styles from "./PrimaryButton.module.css";
+import styles from './PrimaryButton.module.css';
 
 interface IPrimaryButton {
-	text: string;
+  text: string;
 }
 
-function PrimaryButtonPresentational({text}: IPrimaryButton) {
-	return (
-		<button className={styles.primary_btn}>{text}</button>
-	);
+function PrimaryButtonPresentational({ text }: IPrimaryButton) {
+  return <button className={styles.primary_btn}>{text}</button>;
 }
 
 export default PrimaryButtonPresentational;

@@ -5,7 +5,7 @@
   margin-top: 10px;
 }
 
-.flex_container input[type="checkbox"] {
+.flex_container input[type='checkbox'] {
   width: 20px;
   height: 20px;
   accent-color: var(--red-dark);

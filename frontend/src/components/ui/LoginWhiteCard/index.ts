@@ -1,1 +1,1 @@
-export { default } from "./LoginWhiteCardPresentational";
+export { default } from './LoginWhiteCardPresentational';

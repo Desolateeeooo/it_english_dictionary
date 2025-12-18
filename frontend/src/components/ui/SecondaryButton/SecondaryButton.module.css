@@ -14,10 +14,9 @@
   transform: translateY(-2px);
 }
 
-@media (max-width: 480px) {  
+@media (max-width: 480px) {
   .secondary_btn {
     padding: 16px;
     font-size: 18px;
   }
 }
-

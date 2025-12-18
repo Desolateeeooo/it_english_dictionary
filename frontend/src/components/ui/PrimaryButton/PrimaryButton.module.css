@@ -16,10 +16,9 @@
   box-shadow: 0 8px 20px rgba(171, 49, 48, 0.3);
 }
 
-@media (max-width: 480px) {  
+@media (max-width: 480px) {
   .primary_btn {
     padding: 16px;
     font-size: 18px;
   }
 }
-

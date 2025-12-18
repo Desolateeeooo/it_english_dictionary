@@ -5,10 +5,16 @@
     "dev:frontend": "cd frontend && npm run dev",
     "dev:backend": "cd backend && npm run dev",
     "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
-    "install:all": "cd frontend && npm install && cd ../backend && npm install"
+    "install:all": "cd frontend && npm install && cd ../backend && npm install",
+		"format:frontend": "cd frontend && npx prettier --write src/",
+    "format:backend": "cd backend && npx prettier --write src/",
+    "format": "npm run format:frontend && npm run format:backend",
+    "lint:fix": "cd frontend && npx eslint --fix src/ && cd ../backend && npx eslint --fix src/",
+		"format-and-lint": "npm run format && npm run lint:fix"
   },
   "devDependencies": {
-    "concurrently": "^8.0.0"
+    "concurrently": "^8.0.0",
+		"prettier": "^3.0.0"
   }
 }
 

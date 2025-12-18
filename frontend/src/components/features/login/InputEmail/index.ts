@@ -1,1 +1,1 @@
-export { default } from "./InputEmailContainer";
+export { default } from './InputEmailContainer';

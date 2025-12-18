@@ -1,7 +1,7 @@
-import GuidesSectionPresentational from "./GuidesSectionPresentational";
+import GuidesSectionPresentational from './GuidesSectionPresentational';
 
 function GuidesSectionContainer() {
-	return <GuidesSectionPresentational />
+  return <GuidesSectionPresentational />;
 }
 
 export default GuidesSectionContainer;

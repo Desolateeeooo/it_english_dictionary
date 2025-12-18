@@ -1,11 +1,11 @@
-import SecondaryButtonPresentational from "./SecondaryButtonPresentational";
+import SecondaryButtonPresentational from './SecondaryButtonPresentational';
 
 interface ISecondaryButton {
-	text: string;
+  text: string;
 }
 
-function SecondaryButtonContainer({text}: ISecondaryButton) {
-	return <SecondaryButtonPresentational text={text}/>;
+function SecondaryButtonContainer({ text }: ISecondaryButton) {
+  return <SecondaryButtonPresentational text={text} />;
 }
 
 export default SecondaryButtonContainer;

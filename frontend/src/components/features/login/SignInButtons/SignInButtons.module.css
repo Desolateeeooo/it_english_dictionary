@@ -51,7 +51,7 @@
 }
 
 @media (max-width: 480px) {
-	.btn_dont_have_acc {
-		font-size: 14px;
-	}
+  .btn_dont_have_acc {
+    font-size: 14px;
+  }
 }

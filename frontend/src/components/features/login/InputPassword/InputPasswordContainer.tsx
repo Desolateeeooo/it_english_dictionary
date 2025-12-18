@@ -1,19 +1,22 @@
-import { useState } from "react";
-import InputPasswordPresentational from "./InputPasswordPresentational";
+import { useState } from 'react';
+import InputPasswordPresentational from './InputPasswordPresentational';
 
 function InputPasswordContainer() {
-	const [showPassword, setShowPassword] = useState(false);
-	const [inputType, setInputType] = useState("password");
+  const [showPassword, setShowPassword] = useState(false);
+  const [inputType, setInputType] = useState('password');
 
-	const onClickHandler = () => {
-		setShowPassword(!showPassword);
-		setInputType(inputType === "password" ? "text" : "password");
-	}
+  const onClickHandler = () => {
+    setShowPassword(!showPassword);
+    setInputType(inputType === 'password' ? 'text' : 'password');
+  };
 
-	return <InputPasswordPresentational
-		showPassword={showPassword}
-		inputType={inputType}
-		onClickHandler={onClickHandler} />
+  return (
+    <InputPasswordPresentational
+      showPassword={showPassword}
+      inputType={inputType}
+      onClickHandler={onClickHandler}
+    />
+  );
 }
 
 export default InputPasswordContainer;

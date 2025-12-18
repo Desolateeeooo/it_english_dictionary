@@ -1,118 +1,118 @@
 /* Topics grid */
 .topicsSection {
-	margin-bottom: 32px;
-	padding: 0 12px;
+  margin-bottom: 32px;
+  padding: 0 12px;
 }
 
 .topicsTitle {
-	color: var(--red-dark);
-	font-size: 20px;
-	font-weight: bold;
-	text-align: center;
-	margin-bottom: 24px;
+  color: var(--red-dark);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 24px;
 }
 
 .topicsGrid {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
 .topicCard {
-	background-color: var(--white);
-	border-radius: 16px;
-	border: 2px solid var(--red-light);
-	padding: 16px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	cursor: pointer;
-	transition: all 0.3s;
+  background-color: var(--white);
+  border-radius: 16px;
+  border: 2px solid var(--red-light);
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
 .topicCard:hover {
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-	transform: scale(1.01);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: scale(1.01);
 }
 
 .topicHeader {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
 }
 
 .topicInfo {
-	display: flex;
-	align-items: center;
-	gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .topicIcon {
-	padding: 8px;
-	border-radius: 50%;
-	background-color: var(--red-dark);
+  padding: 8px;
+  border-radius: 50%;
+  background-color: var(--red-dark);
 }
 
 .topicIcon svg {
-	color: var(--white);
-	width: 20px;
-	height: 20px;
+  color: var(--white);
+  width: 20px;
+  height: 20px;
 }
 
 .topicName {
-	color: var(--red-dark);
-	font-size: 18px;
-	font-weight: bold;
+  color: var(--red-dark);
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .topicWordCount {
-	padding: 4px 8px;
-	border-radius: 9999px;
-	background-color: var(--cream);
-	font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 9999px;
+  background-color: var(--cream);
+  font-size: 12px;
 }
 
 .topicDescription {
-	color: var(--black);
-	font-size: 14px;
-	margin-bottom: 12px;
+  color: var(--black);
+  font-size: 14px;
+  margin-bottom: 12px;
 }
 
 .favoriteButton {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	font-size: 12px;
-	font-weight: bold;
-	color: var(--red-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--red-light);
 }
 
 .favoriteButton svg {
-	width: 16px;
-	height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 /* === MEDIA QUERIES FOR RESPONSIVENESS === */
 
 /* Tablet and small laptop (≥ 640px) */
 @media (min-width: 640px) {
-	.topicsTitle {
-		font-size: 24px;
-		margin-bottom: 32px;
-	}
+  .topicsTitle {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
 
-	.topicsGrid {
-		grid-template-columns: repeat(2, 1fr);
-		gap: 24px;
-	}
+  .topicsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
 
-	.topicCard:hover {
-		transform: scale(1.02);
-	}
+  .topicCard:hover {
+    transform: scale(1.02);
+  }
 }
 
 /* Desktop (≥ 1024px) */
 @media (min-width: 1024px) {
-	.topicsGrid {
-		grid-template-columns: repeat(3, 1fr);
-	}
+  .topicsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

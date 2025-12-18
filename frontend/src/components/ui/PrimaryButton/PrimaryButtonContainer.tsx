@@ -1,11 +1,11 @@
-import PrimaryButtonPresentational from "./PrimaryButtonPresentational";
+import PrimaryButtonPresentational from './PrimaryButtonPresentational';
 
 interface IPrimaryButton {
-	text: string;
+  text: string;
 }
 
-function PrimaryButtonContainer({text}: IPrimaryButton) {
-	return <PrimaryButtonPresentational text={text}/>;
+function PrimaryButtonContainer({ text }: IPrimaryButton) {
+  return <PrimaryButtonPresentational text={text} />;
 }
 
 export default PrimaryButtonContainer;

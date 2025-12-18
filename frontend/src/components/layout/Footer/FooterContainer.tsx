@@ -1,7 +1,7 @@
-import FooterPresentational from "./FooterPresentational";
+import FooterPresentational from './FooterPresentational';
 
 function FooterContainer() {
-	return <FooterPresentational />
+  return <FooterPresentational />;
 }
 
 export default FooterContainer;
