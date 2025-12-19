@@ -1,11 +1,13 @@
 import PrimaryButtonPresentational from './PrimaryButtonPresentational';
 
-interface IPrimaryButton {
+export interface PrimaryButtonProps {
   text: string;
+  type?: 'submit' | 'button' | 'reset';
+  disabled: boolean | undefined;
 }
 
-function PrimaryButtonContainer({ text }: IPrimaryButton) {
-  return <PrimaryButtonPresentational text={text} />;
+function PrimaryButtonContainer({ text, type, disabled }: PrimaryButtonProps) {
+  return <PrimaryButtonPresentational text={text} type={type} disabled={disabled} />;
 }
 
 export default PrimaryButtonContainer;

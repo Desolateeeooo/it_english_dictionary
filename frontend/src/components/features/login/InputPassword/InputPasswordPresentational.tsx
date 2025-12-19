@@ -1,21 +1,35 @@
 import styles from './InputPassword.module.css';
 import { Lock } from 'lucide-react';
 import { InputWrapper } from '../../../layout';
+import type { InputPasswordProps } from './InputPasswordContainer';
 
-interface IInputPassword {
+interface InputPasswordProps2 extends InputPasswordProps {
   showPassword: boolean;
   inputType: string;
   onClickHandler: () => void;
 }
 
-function InputPasswordPresentational({ showPassword, inputType, onClickHandler }: IInputPassword) {
+function InputPasswordPresentational({
+  showPassword,
+  inputType,
+  onClickHandler,
+  value,
+  isSubmitting,
+  loading,
+  handleChange,
+}: InputPasswordProps2) {
   return (
     <InputWrapper>
       <input
         type={inputType}
-        name="sign-in-password"
+        id="password"
+        name="password"
+        value={value}
+        onChange={handleChange}
         placeholder="Password"
         className={styles.input_field}
+        required
+        disabled={isSubmitting || loading}
       />
       <Lock className={styles.input_icon} size={20} />
       <button type="button" className={styles.password_toggle} onClick={onClickHandler}>

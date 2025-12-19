@@ -1,11 +1,16 @@
 import styles from './PrimaryButton.module.css';
+import type { PrimaryButtonProps } from './PrimaryButtonContainer';
 
-interface IPrimaryButton {
-  text: string;
-}
-
-function PrimaryButtonPresentational({ text }: IPrimaryButton) {
-  return <button className={styles.primary_btn}>{text}</button>;
+function PrimaryButtonPresentational({ text, type, disabled }: PrimaryButtonProps) {
+  return (
+    <button
+      type={type}
+      className={styles.primary_btn}
+      disabled={disabled}
+    >
+      {text}
+    </button>
+  );
 }
 
 export default PrimaryButtonPresentational;

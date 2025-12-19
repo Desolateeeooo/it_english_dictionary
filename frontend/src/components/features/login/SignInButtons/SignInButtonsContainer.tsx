@@ -1,11 +1,17 @@
 import SignInButtonsPresentational from './SignInButtonsPresentational';
 
-interface ISignInButtons {
+export interface SignInButtonsProps {
   link: string;
   linkTitle: string;
   linkButtonText: string;
   helperButtonText: string;
   primaryButtonText: string;
+  formData: {
+    email: string;
+    password: string;
+  };
+  isSubmitting: boolean;
+  loading: boolean;
 }
 
 function SignInButtonsContainer({
@@ -14,7 +20,10 @@ function SignInButtonsContainer({
   linkButtonText,
   helperButtonText,
   primaryButtonText,
-}: ISignInButtons) {
+	formData,
+	isSubmitting,
+	loading
+}: SignInButtonsProps) {
   return (
     <SignInButtonsPresentational
       link={link}
@@ -22,6 +31,9 @@ function SignInButtonsContainer({
       linkButtonText={linkButtonText}
       helperButtonText={helperButtonText}
       primaryButtonText={primaryButtonText}
+			formData={formData}
+			isSubmitting={isSubmitting}
+			loading={loading}
     />
   );
 }

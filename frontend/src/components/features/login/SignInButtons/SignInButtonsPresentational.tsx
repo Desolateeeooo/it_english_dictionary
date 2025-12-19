@@ -2,14 +2,7 @@ import { Link } from 'react-router-dom';
 import { FlexContainer, PrimaryButton } from '../../../ui';
 import styles from './SignInButtons.module.css';
 import { SocialLoginButtons } from '../../oauth';
-
-interface ISignInButtons {
-  link: string;
-  linkTitle: string;
-  linkButtonText: string;
-  helperButtonText: string;
-  primaryButtonText: string;
-}
+import type { SignInButtonsProps } from './SignInButtonsContainer';
 
 function SignInButtonsPresentational({
   link,
@@ -17,10 +10,25 @@ function SignInButtonsPresentational({
   linkButtonText,
   helperButtonText,
   primaryButtonText,
-}: ISignInButtons) {
+  formData,
+  isSubmitting,
+  loading,
+}: SignInButtonsProps) {
   return (
     <section className={styles.sign_in_btns}>
-      <PrimaryButton text={primaryButtonText} />
+      <PrimaryButton
+        text={
+          primaryButtonText === 'Sign in'
+            ? isSubmitting
+              ? 'Signing in...'
+              : 'Sign In'
+            : isSubmitting
+              ? 'Signing up...'
+              : 'Sign Up'
+        }
+        type="submit"
+        disabled={isSubmitting || loading || !formData.email || !formData.password}
+      />
       <FlexContainer style={{ gap: 20 }}>
         <hr />
         <p>or</p>
