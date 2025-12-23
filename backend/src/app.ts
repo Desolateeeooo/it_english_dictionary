@@ -1,10 +1,17 @@
 import session from 'express-session';
 import express from 'express';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 import authRoutes from './routes/authRoutes';
 
 const app = express();
 
+app.use(
+  cors({
+    origin: 'http://localhost:5173', // Your React dev server
+    credentials: true, // Allow cookies
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
