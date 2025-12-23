@@ -18,8 +18,6 @@ interface AuthContextType {
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-axios.defaults.withCredentials = true;
-
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -30,7 +28,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const checkAuth = async () => {
     try {
-      const response = await apiClient.get('http://localhost:5000/api/auth/me');
+      const response = await apiClient.get('/auth/me');
       setUser(response.data.user);
     } catch (error) {
       setUser(null);
@@ -41,12 +39,21 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const login = async (email: string, password: string) => {
     try {
-      const response = await apiClient.post('http://localhost:5000/api/auth/login', {
+      console.log('Attempting login with:', { email });
+      const response = await apiClient.post('/auth/login', {
         email,
         password,
       });
 
+      console.log('Login response:', response.data);
+      console.log('Response headers:', response.headers);
+
       setUser(response.data.user);
+
+      setTimeout(async () => {
+        console.log('Checking auth after login...');
+        await checkAuth();
+      }, 100);
     } catch (error: any) {
       if (axios.isAxiosError(error) && error.response) {
         throw new Error(error.response.data.error || 'Login failed.');
@@ -57,7 +64,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const logout = async () => {
     try {
-      await apiClient.post('http://localhost:5000/api/auth/logout');
+      await apiClient.post('/auth/logout');
       setUser(null);
     } catch (error) {
       console.log('Logout error:', error);

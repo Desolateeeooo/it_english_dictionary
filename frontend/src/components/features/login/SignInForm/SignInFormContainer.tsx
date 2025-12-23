@@ -23,6 +23,7 @@ function SignInFormContainer() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    console.log('🎯 Form submitted!', formData); // Add this
     setIsSubmitting(true);
     setError('');
 
@@ -40,10 +41,10 @@ function SignInFormContainer() {
     <SignInFormPresentational
       formData={formData}
       isSubmitting={isSubmitting}
-			loading={loading}
+      loading={loading}
       handleChange={handleChange}
       handleSubmit={handleSubmit}
-			error={error}
+      error={error}
     />
   );
 }

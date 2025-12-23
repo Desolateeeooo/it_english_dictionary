@@ -10,8 +10,12 @@ declare module 'express-session' {
   }
 }
 
-router.get('/api/test-cors', (_req, res) => {
-  res.json({ message: 'CORS is working!' });
+router.use((req, _res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+  console.log('Cookies:', req.cookies);
+  console.log('Session ID:', req.sessionID);
+  console.log('Session:', req.session);
+  next();
 });
 
 router.post('/login', (req, res) => {
