@@ -1,5 +1,5 @@
 import express from 'express';
-import { mockUsers } from '@/data/mockUsers';
+import { mockUsers } from '../data/mockUsers';
 
 const router = express.Router();
 
@@ -9,6 +9,10 @@ declare module 'express-session' {
     authenticated?: boolean;
   }
 }
+
+router.get('/api/test-cors', (_req, res) => {
+  res.json({ message: 'CORS is working!' });
+});
 
 router.post('/login', (req, res) => {
   try {

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createContext, useEffect, useState, type ReactNode } from 'react';
+import apiClient from '../api/apiClient';
 
 interface User {
   id: number;
@@ -29,7 +30,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const checkAuth = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/auth/me');
+      const response = await apiClient.get('http://localhost:5000/api/auth/me');
       setUser(response.data.user);
     } catch (error) {
       setUser(null);
@@ -40,7 +41,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const login = async (email: string, password: string) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await apiClient.post('http://localhost:5000/api/auth/login', {
         email,
         password,
       });
@@ -56,7 +57,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const logout = async () => {
     try {
-      await axios.post('http://localhost:5000/api/auth/logout');
+      await apiClient.post('http://localhost:5000/api/auth/logout');
       setUser(null);
     } catch (error) {
       console.log('Logout error:', error);
