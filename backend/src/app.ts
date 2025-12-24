@@ -3,7 +3,8 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import authRoutes from './routes/authRoutes';
-import { env, isProduction } from './config';
+import passport from 'passport';
+import { env, isProduction } from './config/index';
 
 const app = express();
 
@@ -44,6 +45,9 @@ app.use(
     saveUninitialized: false,
   })
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // TEST ENDPOINT - BEFORE any other routes
 app.get('/api/test-cors', (req, res) => {
