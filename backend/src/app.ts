@@ -3,6 +3,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import authRoutes from './routes/authRoutes';
+import { env, isProduction } from './config';
 
 const app = express();
 
@@ -32,12 +33,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || 'f4z4gs$Gcg',
+    secret: env.SESSION_SECRET,
     cookie: {
       maxAge: 1000 * 60 * 60 * 24,
-      // secure: process.env.NODE_ENV === 'production',
-      secure: false,
-      // sameSite: process.env.NODE_ENV === 'production' ? 'lax' : 'none',
+      secure: isProduction,
       sameSite: 'lax',
       httpOnly: true,
     },
@@ -49,10 +48,10 @@ app.use(
 // TEST ENDPOINT - BEFORE any other routes
 app.get('/api/test-cors', (req, res) => {
   console.log('✅ Test CORS endpoint HIT!');
-  res.json({ 
+  res.json({
     message: 'CORS is working!',
     timestamp: new Date().toISOString(),
-    sessionId: req.sessionID
+    sessionId: req.sessionID,
   });
 });
 
