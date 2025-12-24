@@ -4,7 +4,8 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import authRoutes from './routes/authRoutes';
 import passport from 'passport';
-import { env, isProduction } from './config/index';
+import { env, isProduction } from './config';
+import './config/passport';
 
 const app = express();
 
