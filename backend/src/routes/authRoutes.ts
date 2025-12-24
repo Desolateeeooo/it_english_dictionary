@@ -1,5 +1,4 @@
 import express from 'express';
-import { mockUsers } from '../data/mockUsers';
 import passport from 'passport';
 
 const router = express.Router();
@@ -41,15 +40,12 @@ router.post('/login', (req, res, next) => {
   })(req, res, next);
 });
 
-// Refactor this with passport middleware!!
 router.get('/me', (req, res) => {
-  // 3. Refactor this checking to middleware
-
-  if (!req.session.authenticated || !req.session.userId) {
+  if (!req.isAuthenticated()) {
     return res.status(401).json({ user: null });
   }
+  const user = req.user as any;
 
-  const user = mockUsers.find((u) => u.id === req.session.userId);
   if (!user) {
     return res.status(401).json({ user: null });
   }
