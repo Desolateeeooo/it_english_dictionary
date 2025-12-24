@@ -35,7 +35,6 @@ function SignInButtonsPresentational({
         <hr />
       </FlexContainer>
       <SocialLoginButtons />
-      {/*<SecondaryButton text={"Sign in with the other"} /> */}
       <FlexContainer style={{ justifyContent: 'flex-start' }}>
         <Link to={link} title={linkTitle}>
           <button className={styles.btn_dont_have_acc}>{helperButtonText}</button>

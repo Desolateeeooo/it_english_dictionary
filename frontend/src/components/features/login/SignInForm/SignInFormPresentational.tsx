@@ -49,7 +49,6 @@ function SignInFormPresentational({
           </div>
           <button className={styles.btn_forgot_password}>Forgot password?</button>
         </FlexContainer>
-      </FormContainer>
       <SignInButtons
         link="/signup"
         linkTitle="Sign Up"
@@ -60,6 +59,7 @@ function SignInFormPresentational({
 				loading={loading}
 				formData={formData}
       />
+      </FormContainer>
     </>
   );
 }
