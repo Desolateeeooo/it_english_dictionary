@@ -1,5 +1,6 @@
 import express from 'express';
 import { mockUsers } from '../data/mockUsers';
+import passport from 'passport';
 
 const router = express.Router();
 
@@ -18,46 +19,29 @@ router.use((req, _res, next) => {
   next();
 });
 
-router.post('/login', (req, res) => {
-  try {
-    const { email, password } = req.body;
-
-    // 1. Modify input validation!!
-
-    if (!email || !password) {
-      return res.status(400).json({
-        error: 'Email and password are required.',
-      });
-    }
-
-    // 2. Modify this to find user in Database instead of mockData!!
-
-    const user = mockUsers.find((u) => u.email === email && u.password === password);
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', (err: Error, user: any, info: any) => {
+    if (err) return next(err);
 
     if (!user) {
       return res.status(401).json({
-        error: 'Invalid email or password',
+        error: info?.message || 'Invalid email or password',
       });
     }
 
-    req.session.userId = user.id;
-    req.session.authenticated = true;
+    req.logIn(user, (err) => {
+      if (err) return next(err);
 
-    const { password: _, ...userWithoutPassword } = user;
-
-    res.json({
-      message: 'Login successfull',
-      user: userWithoutPassword,
+      const { password, ...userWithoutPassword } = user;
+      res.json({
+        message: 'Login successful',
+        user: userWithoutPassword,
+      });
     });
-  } catch (error) {
-    console.log('Login error:', error);
-    res.status(500).json({ error: 'Internal server error.' });
-  }
-
-  return;
+  })(req, res, next);
 });
 
-// Check auth status
+// Refactor this with passport middleware!!
 router.get('/me', (req, res) => {
   // 3. Refactor this checking to middleware
 
@@ -76,19 +60,11 @@ router.get('/me', (req, res) => {
   return;
 });
 
-router.post('/logout', (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      return res.status(500).json({ error: 'Failed to logout.' });
-    }
-
-    res.clearCookie('connect.sid');
-    res.json({ message: 'Logout successfull.' });
-
-    return;
+router.post('/logout', (req, res, next) => {
+  req.logout((err) => {
+    if (err) return next(err);
+    res.json({ message: 'Logged out' });
   });
-
-  return;
 });
 
 export default router;
