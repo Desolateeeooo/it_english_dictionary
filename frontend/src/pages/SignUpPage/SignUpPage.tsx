@@ -14,14 +14,14 @@ function SignUpPage() {
           <InputUsername />
           <InputPassword />
           <InputEmail />
+          <SignInButtons
+            link="/signin"
+            linkTitle="Sign In"
+            linkButtonText="Sign in"
+            helperButtonText="Already have an account?"
+            primaryButtonText="Sign up"
+          />
         </FormContainer>
-        <SignInButtons
-          link="/signin"
-          linkTitle="Sign In"
-          linkButtonText="Sign in"
-          helperButtonText="Already have an account?"
-          primaryButtonText="Sign up"
-        />
       </LoginWhiteCard>
     </MainContainer>
   );

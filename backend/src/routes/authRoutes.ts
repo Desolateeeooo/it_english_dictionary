@@ -1,3 +1,4 @@
+import { createUser } from '../data/mockUsers';
 import express from 'express';
 import passport from 'passport';
 
@@ -61,6 +62,20 @@ router.post('/logout', (req, res, next) => {
     if (err) return next(err);
     res.json({ message: 'Logged out' });
   });
+});
+
+router.post('/register', async (req, res) => {
+  const { username, email, password } = req.body;
+
+  const newUser = await createUser({ username, email, password });
+  if (newUser) {
+    res.status(201).json({
+      message: `User ${username} was successfully created!`,
+      newUser,
+    });
+  } else {
+    res.status(500).json({ message: `Oops! Failed to create user ${username}` });
+  }
 });
 
 export default router;
