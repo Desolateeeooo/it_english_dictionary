@@ -70,11 +70,11 @@ router.post('/register', async (req, res) => {
   const newUser = await createUser({ username, email, password });
   if (newUser) {
     res.status(201).json({
-      message: `User ${username} was successfully created!`,
+      message: `User ${username} was successfully registered!`,
       newUser,
     });
   } else {
-    res.status(500).json({ message: `Oops! Failed to create user ${username}` });
+    res.status(500).json({ message: `Oops! Failed to register user ${username}` });
   }
 });
 
