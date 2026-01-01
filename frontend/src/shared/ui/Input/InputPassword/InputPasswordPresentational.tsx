@@ -1,6 +1,6 @@
 import styles from './InputPassword.module.css';
 import { Lock } from 'lucide-react';
-import { InputWrapper } from '../../../layout';
+import InputWrapper from '../InputWrapper';
 import type { InputPasswordProps } from './InputPasswordContainer';
 
 interface InputPasswordProps2 extends InputPasswordProps {

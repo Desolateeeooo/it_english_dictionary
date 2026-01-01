@@ -1,6 +1,6 @@
 import { User } from 'lucide-react';
 import styles from './InputUsername.module.css';
-import { InputWrapper } from '../../../layout';
+import InputWrapper from '../InputWrapper';
 import type { InputUsernameProps } from './InputUsernameContainer';
 
 function InputUsernamePresentational({

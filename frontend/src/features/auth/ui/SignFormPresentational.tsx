@@ -1,4 +1,4 @@
-import { InputUsername, InputEmail, InputPassword } from '../../../components/features/login';
+import { InputUsername, InputEmail, InputPassword } from '../../../shared/ui/Input';
 import { FormContainer, FlexContainer } from '../../../components/ui';
 import AuthButtonsContainer from './AuthButtonsContainer';
 import styles from './SignForm.module.css';

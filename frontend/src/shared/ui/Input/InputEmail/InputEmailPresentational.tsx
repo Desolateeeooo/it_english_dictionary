@@ -1,7 +1,7 @@
 import { Mail } from 'lucide-react';
-import { InputWrapper } from '../../../layout';
 import styles from './InputEmail.module.css';
 import type { InputEmailProps } from './InputEmailContainer';
+import InputWrapper from '../InputWrapper';
 
 function InputEmailPresentational({value, isSubmitting, loading, handleChange}: InputEmailProps) {
   return (
