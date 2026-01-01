@@ -1,6 +1,5 @@
-import { Home } from 'lucide-react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { SignIn, SignUp, Profile } from '../pages';
+import { SignIn, SignUp, Profile, Home } from '../pages';
 
 function AppRouter() {
   return (

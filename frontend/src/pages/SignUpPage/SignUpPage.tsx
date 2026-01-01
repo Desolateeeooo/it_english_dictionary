@@ -1,5 +1,5 @@
-import { SignUpForm } from '../../components/features/login';
-import { LoginWhiteCard, MainContainer } from '../../components/ui';
+import { SignUpForm } from '../../features/auth';
+import { LoginWhiteCard, MainContainer } from '../../shared/ui';
 
 function SignUpPage() {
   return (

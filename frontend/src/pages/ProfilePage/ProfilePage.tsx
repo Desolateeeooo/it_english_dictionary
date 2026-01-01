@@ -1,5 +1,5 @@
-import { ProtectedRoute } from '../../components/features/login';
-import { useAuth } from '../../hooks/useAuth';
+import { ProtectedRoute } from '../../shared';
+import { useAuth } from '../../features/auth';
 
 function ProfilePage() {
   const { user, logout } = useAuth();

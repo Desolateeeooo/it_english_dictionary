@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
-import { SignInForm } from '../../components/features/login';
-import { LoginWhiteCard, MainContainer } from '../../components/ui';
-import { useAuth } from '../../hooks/useAuth';
+import { SignInForm } from '../../features/auth';
+import { LoginWhiteCard, MainContainer } from '../../shared/ui';
+import { useAuth } from '../../features/auth';
 
 function SignInPage() {
   const { user } = useAuth();
