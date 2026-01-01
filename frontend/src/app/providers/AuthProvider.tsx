@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState, type ReactNode } from 'react';
-import apiClient from '../../api/apiClient';
+import { apiClient } from '../../features/auth';
 import { AuthContext, type User } from '../../features/auth';
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
