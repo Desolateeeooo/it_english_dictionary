@@ -7,11 +7,7 @@ interface FormContainerProps {
   handleSubmit: (e: FormEvent) => Promise<void>;
 }
 
-function FormContainerPresentational({
-  header,
-  children,
-  handleSubmit
-}: FormContainerProps) {
+function FormContainerPresentational({ header, children, handleSubmit }: FormContainerProps) {
   return (
     <section className={styles.sign_in_form}>
       <h2>{header}</h2>

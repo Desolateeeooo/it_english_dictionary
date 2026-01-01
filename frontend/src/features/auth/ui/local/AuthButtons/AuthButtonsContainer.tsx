@@ -1,4 +1,4 @@
-import AuthButtonsPresentational from "./AuthButtonsPresentational";
+import AuthButtonsPresentational from './AuthButtonsPresentational';
 
 export interface AuthButtonsProps {
   link: string;
@@ -20,9 +20,9 @@ function AuthButtonsContainer({
   linkButtonText,
   helperButtonText,
   primaryButtonText,
-	formData,
-	isSubmitting,
-	loading
+  formData,
+  isSubmitting,
+  loading,
 }: AuthButtonsProps) {
   return (
     <AuthButtonsPresentational
@@ -31,9 +31,9 @@ function AuthButtonsContainer({
       linkButtonText={linkButtonText}
       helperButtonText={helperButtonText}
       primaryButtonText={primaryButtonText}
-			formData={formData}
-			isSubmitting={isSubmitting}
-			loading={loading}
+      formData={formData}
+      isSubmitting={isSubmitting}
+      loading={loading}
     />
   );
 }

@@ -11,16 +11,16 @@ function InputUsernamePresentational({
 }: InputUsernameProps) {
   return (
     <InputWrapper>
-     <input
+      <input
         type="text"
         id="username"
         name="username"
-				value={value}
-				onChange={handleChange}
+        value={value}
+        onChange={handleChange}
         placeholder="Username"
         className={styles.input_field}
-				required
-				disabled={isSubmitting || loading}
+        required
+        disabled={isSubmitting || loading}
       />
       <User className={styles.input_icon} size={20} />
     </InputWrapper>
