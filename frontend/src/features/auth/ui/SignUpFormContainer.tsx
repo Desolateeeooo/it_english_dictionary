@@ -1,7 +1,7 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import SignFormPresentational from './SignFormPresentational';
-import { useAuth } from '../../../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../lib';
 
 function SignUpFormContainer() {
   const { loading, register } = useAuth();

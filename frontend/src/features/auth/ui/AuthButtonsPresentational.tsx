@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { FlexContainer, PrimaryButton } from '../../../ui';
-import styles from './SignInButtons.module.css';
-import { SocialLoginButtons } from '../../oauth';
-import type { SignInButtonsProps } from './SignInButtonsContainer';
+import { SocialLoginButtons } from '../../../components/features/oauth';
+import { PrimaryButton, FlexContainer } from '../../../components/ui';
+import type { AuthButtonsProps } from './AuthButtonsContainer';
+import styles from './AuthButtons.module.css';
 
-function SignInButtonsPresentational({
+function AuthButtonsPresentational({
   link,
   linkTitle,
   linkButtonText,
@@ -13,7 +13,7 @@ function SignInButtonsPresentational({
   formData,
   isSubmitting,
   loading,
-}: SignInButtonsProps) {
+}: AuthButtonsProps) {
   return (
     <section className={styles.sign_in_btns}>
       <PrimaryButton
@@ -47,4 +47,4 @@ function SignInButtonsPresentational({
   );
 }
 
-export default SignInButtonsPresentational;
+export default AuthButtonsPresentational;

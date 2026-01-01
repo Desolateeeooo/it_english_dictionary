@@ -1,6 +1,6 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
-import SignInFormPresentational from './SignInFormPresentational';
-import { useAuth } from '../../../../hooks/useAuth';
+import SignFormPresentational from './SignFormPresentational';
+import { useAuth } from '../lib';
 
 function SignInFormContainer() {
   const { login, loading } = useAuth();
@@ -38,7 +38,8 @@ function SignInFormContainer() {
   };
 
   return (
-    <SignInFormPresentational
+    <SignFormPresentational
+      type="signin"
       formData={formData}
       isSubmitting={isSubmitting}
       loading={loading}

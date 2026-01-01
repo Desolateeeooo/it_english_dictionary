@@ -1,23 +1,7 @@
 import axios from 'axios';
-import { createContext, useEffect, useState, type ReactNode } from 'react';
-import apiClient from '../api/apiClient';
-
-interface User {
-  id: number;
-  username: string;
-  email: string;
-}
-
-interface AuthContextType {
-  user: User | null;
-  loading: boolean;
-  login: (email: string, password: string) => Promise<void>;
-  logout: () => Promise<void>;
-  register: (username: string, email: string, password: string) => Promise<void>;
-  checkAuth: () => Promise<void>;
-}
-
-export const AuthContext = createContext<AuthContextType | undefined>(undefined);
+import { useEffect, useState, type ReactNode } from 'react';
+import apiClient from '../../api/apiClient';
+import { AuthContext, type User } from '../../features/auth';
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);

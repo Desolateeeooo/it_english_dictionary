@@ -1,6 +1,6 @@
-import SignInButtonsPresentational from './SignInButtonsPresentational';
+import AuthButtonsPresentational from "./AuthButtonsPresentational";
 
-export interface SignInButtonsProps {
+export interface AuthButtonsProps {
   link: string;
   linkTitle: string;
   linkButtonText: string;
@@ -14,7 +14,7 @@ export interface SignInButtonsProps {
   loading: boolean;
 }
 
-function SignInButtonsContainer({
+function AuthButtonsContainer({
   link,
   linkTitle,
   linkButtonText,
@@ -23,9 +23,9 @@ function SignInButtonsContainer({
 	formData,
 	isSubmitting,
 	loading
-}: SignInButtonsProps) {
+}: AuthButtonsProps) {
   return (
-    <SignInButtonsPresentational
+    <AuthButtonsPresentational
       link={link}
       linkTitle={linkTitle}
       linkButtonText={linkButtonText}
@@ -38,4 +38,4 @@ function SignInButtonsContainer({
   );
 }
 
-export default SignInButtonsContainer;
+export default AuthButtonsContainer;

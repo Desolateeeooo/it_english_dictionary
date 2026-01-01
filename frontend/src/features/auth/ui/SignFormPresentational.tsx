@@ -1,6 +1,7 @@
+import { InputUsername, InputEmail, InputPassword } from '../../../components/features/login';
+import { FormContainer, FlexContainer } from '../../../components/ui';
+import AuthButtonsContainer from './AuthButtonsContainer';
 import styles from './SignForm.module.css';
-import { InputEmail, InputPassword, InputUsername, SignInButtons } from '..';
-import { FlexContainer, FormContainer } from '../../../ui';
 import type { ChangeEvent, FormEvent } from 'react';
 
 type FormType = 'signin' | 'signup';
@@ -69,7 +70,7 @@ function SignFormPresentational({
           <></>
         )}
         {type === 'signin' ? (
-          <SignInButtons
+          <AuthButtonsContainer
             link="/signup"
             linkTitle="Sign Up"
             linkButtonText="Sign up"
@@ -80,7 +81,7 @@ function SignFormPresentational({
             formData={formData}
           />
         ) : (
-          <SignInButtons
+          <AuthButtonsContainer
             link="/signin"
             linkTitle="Sign In"
             linkButtonText="Sign in"
