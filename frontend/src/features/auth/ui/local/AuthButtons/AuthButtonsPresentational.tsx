@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { SocialLoginButtons } from '../../../components/features/oauth';
-import { PrimaryButton, FlexContainer } from '../../../components/ui';
+import { SocialLoginButtons } from '../../oauth';
+import { PrimaryButton, FlexContainer } from '../../../../../shared/ui';
 import type { AuthButtonsProps } from './AuthButtonsContainer';
 import styles from './AuthButtons.module.css';
 

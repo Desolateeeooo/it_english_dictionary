@@ -1,6 +1,6 @@
-import { InputUsername, InputEmail, InputPassword } from '../../../shared/ui/Input';
-import { FormContainer, FlexContainer } from '../../../components/ui';
-import AuthButtonsContainer from './AuthButtonsContainer';
+import { InputUsername, InputEmail, InputPassword } from '../../../../../shared/ui/Input';
+import { FormContainer, FlexContainer } from '../../../../../shared/ui';
+import AuthButtonsContainer from '../AuthButtons';
 import styles from './SignForm.module.css';
 import type { ChangeEvent, FormEvent } from 'react';
 

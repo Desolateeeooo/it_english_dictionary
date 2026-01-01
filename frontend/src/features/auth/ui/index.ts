@@ -1,3 +1,3 @@
-export { default as SignInForm } from './SignInFormContainer';
-export { default as SignUpForm } from './SignUpFormContainer';
-
+export { AuthButtons, SignInForm, SignUpForm } from './local';
+export { SocialLoginButtons } from './oauth';
+export { default as ProtectedRoute } from './ProtectedRouteContainer';

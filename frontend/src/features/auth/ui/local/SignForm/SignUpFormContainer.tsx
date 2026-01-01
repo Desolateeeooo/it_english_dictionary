@@ -1,15 +1,18 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import SignFormPresentational from './SignFormPresentational';
-import { useAuth } from '../lib';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../lib';
 
-function SignInFormContainer() {
-  const { login, loading } = useAuth();
+function SignUpFormContainer() {
+  const { loading, register } = useAuth();
   const [formData, setFormData] = useState({
+    username: '',
     email: '',
     password: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -28,8 +31,9 @@ function SignInFormContainer() {
     setError('');
 
     try {
-      await login(formData.email, formData.password);
-      console.log('Login successfull!');
+      await register(formData.username, formData.email, formData.password);
+      console.log('Registration successful!');
+      navigate('/profile');
     } catch (err: any) {
       setError(err.message || 'Login failed.');
     } finally {
@@ -39,7 +43,7 @@ function SignInFormContainer() {
 
   return (
     <SignFormPresentational
-      type="signin"
+      type="signup"
       formData={formData}
       isSubmitting={isSubmitting}
       loading={loading}
@@ -50,4 +54,4 @@ function SignInFormContainer() {
   );
 }
 
-export default SignInFormContainer;
+export default SignUpFormContainer;
