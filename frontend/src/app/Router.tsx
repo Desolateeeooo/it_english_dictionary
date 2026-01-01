@@ -2,7 +2,7 @@ import { Home } from 'lucide-react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { SignIn, SignUp, Profile } from '../pages';
 
-function Router() {
+function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
@@ -15,4 +15,4 @@ function Router() {
   );
 }
 
-export default Router;
+export default AppRouter;
