@@ -1,0 +1,100 @@
+import { InputUsername, InputEmail, InputPassword } from '../../../../../shared/ui/Input';
+import { FormContainer, FlexContainer } from '../../../../../shared/ui';
+import AuthButtonsContainer from '../AuthButtons';
+import styles from './SignForm.module.css';
+import type { ChangeEvent, FormEvent } from 'react';
+
+type FormType = 'signin' | 'signup';
+
+interface SignFormProps {
+  type: FormType;
+  formData: {
+    username?: string;
+    email: string;
+    password: string;
+  };
+  isSubmitting: boolean;
+  loading: boolean;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (e: FormEvent) => Promise<void>;
+  error: string;
+}
+
+function SignFormPresentational({
+  type,
+  formData,
+  isSubmitting,
+  loading,
+  handleChange,
+  handleSubmit,
+  error,
+}: SignFormProps) {
+  return (
+    <>
+      <FormContainer header={'Sign in'} handleSubmit={handleSubmit}>
+        {error && <div className={styles.error}>{error}</div>}
+        {type === 'signup' ? (
+          <InputUsername
+            value={formData.username}
+            handleChange={handleChange}
+            isSubmitting={isSubmitting}
+            loading={loading}
+          />
+        ) : (
+          <></>
+        )}
+        <InputEmail
+          value={formData.email}
+          handleChange={handleChange}
+          isSubmitting={isSubmitting}
+          loading={loading}
+        />
+        <InputPassword
+          value={formData.password}
+          isSubmitting={isSubmitting}
+          loading={loading}
+          handleChange={handleChange}
+        />
+        {type === 'signin' ? (
+          <FlexContainer>
+            <div
+              className={styles.flex_container}
+              style={{ justifyContent: 'flex-start', marginTop: 0 }}
+            >
+              <input type="checkbox" name="sign-in-remember-me" />
+              <label htmlFor="sign-in-remember-me">Remember me</label>
+            </div>
+            <button className={styles.btn_forgot_password}>Forgot password?</button>
+          </FlexContainer>
+        ) : (
+          <></>
+        )}
+        {type === 'signin' ? (
+          <AuthButtonsContainer
+            link="/signup"
+            linkTitle="Sign Up"
+            linkButtonText="Sign up"
+            helperButtonText="Don't have an account?"
+            primaryButtonText="Sign in"
+            isSubmitting={isSubmitting}
+            loading={loading}
+            formData={formData}
+          />
+        ) : (
+          <AuthButtonsContainer
+            link="/signin"
+            linkTitle="Sign In"
+            linkButtonText="Sign in"
+            helperButtonText="Already have an account?"
+            primaryButtonText="Sign up"
+            isSubmitting={isSubmitting}
+            loading={loading}
+            formData={formData}
+          />
+        )}
+      </FormContainer>
+    </>
+  );
+}
+
+export default SignFormPresentational;

@@ -1,1 +1,1 @@
-export { default } from "./SubscriptionCardContainer";
+export { default } from './SubscriptionCardContainer';

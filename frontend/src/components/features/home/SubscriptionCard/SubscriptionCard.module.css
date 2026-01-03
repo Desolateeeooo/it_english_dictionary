@@ -81,41 +81,41 @@
 /* === MEDIA QUERIES FOR RESPONSIVENESS === */
 
 /* Tablet and small laptop (≥ 640px) */
-@media (min-width: 640px) {  
+@media (min-width: 640px) {
   .subscriptionCard {
     max-width: 400px;
     padding: 24px;
   }
-  
+
   .subscriptionHeader {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 24px;
   }
-  
+
   .subscriptionTitle {
     margin-bottom: 0;
     font-size: 24px;
   }
-  
+
   .subscriptionBadge {
     align-self: center;
   }
-  
+
   .subscriptionExpires {
     font-size: 16px;
     margin-bottom: 16px;
   }
-  
+
   .subscriptionFeatures {
     gap: 12px;
   }
-  
+
   .featureItem {
     font-size: 16px;
   }
-  
+
   .upgradeButton {
     padding: 16px;
     font-size: 16px;

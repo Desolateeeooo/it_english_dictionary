@@ -1,1 +1,1 @@
-export { default } from "./TopicsGridContainer";
+export { default } from './TopicsGridContainer';

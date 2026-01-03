@@ -21,7 +21,7 @@
 }
 
 .searchInput:focus {
-  border-color: #3B82F6;
+  border-color: #3b82f6;
 }
 
 .searchButton {
@@ -43,20 +43,20 @@
 /* === MEDIA QUERIES FOR RESPONSIVENESS === */
 
 /* Tablet and small laptop (≥ 640px) */
-@media (min-width: 640px) { 
+@media (min-width: 640px) {
   .searchContainer {
     max-width: 500px;
   }
-  
+
   .searchInput {
     padding: 16px 24px;
     font-size: 18px;
   }
-  
+
   .searchButton {
     padding: 12px;
   }
-  
+
   .searchButton svg {
     width: 24px;
     height: 24px;

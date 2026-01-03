@@ -1,16 +1,22 @@
-import { SignInButtons, SignInForm } from "../../components/features/login";
-import { FlexContainer } from "../../components/layout";
-import styles from "./SignInPage.module.css";
+import { Navigate } from 'react-router-dom';
+import { SignInForm } from '../../features/auth';
+import { LoginWhiteCard, MainContainer } from '../../shared/ui';
+import { useAuth } from '../../features/auth';
 
 function SignInPage() {
-	return (
-		<FlexContainer style={{backgroundImage: "var(--cream-gradient)", padding: 20 }}>
-			<main className={styles.main}>
-				<SignInForm />
-				<SignInButtons />
-			</main>
-		</FlexContainer>
-	);
+  const { user } = useAuth();
+
+  if (user) {
+    return <Navigate to="/profile" replace />;
+  }
+
+  return (
+    <MainContainer style={{ backgroundImage: 'var(--cream-gradient)', padding: 20 }}>
+      <LoginWhiteCard>
+        <SignInForm />
+      </LoginWhiteCard>
+    </MainContainer>
+  );
 }
 
 export default SignInPage;

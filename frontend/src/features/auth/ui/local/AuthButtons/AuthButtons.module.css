@@ -1,0 +1,57 @@
+/* === RIGHT SIDE - SIGN IN BUTTONS === */
+.sign_in_btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+}
+
+.sign_in_btns hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(171, 49, 48, 0.2);
+  width: 100%;
+  margin: 10px 0;
+}
+
+.sign_in_btns p {
+  text-align: center;
+  color: var(--black);
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.btn_dont_have_acc,
+.btn_sign_up {
+  background: none;
+  border: none;
+  color: var(--red-light);
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  padding: 12px;
+  transition: color 0.2s;
+}
+
+.btn_dont_have_acc:hover,
+.btn_sign_up:hover {
+  color: var(--red-dark);
+}
+
+.btn_sign_up {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .sign_in_btns {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn_dont_have_acc {
+    font-size: 14px;
+  }
+}

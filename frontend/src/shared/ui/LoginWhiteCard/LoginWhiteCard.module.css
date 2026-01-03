@@ -1,0 +1,37 @@
+/* === WHITE CARD === */
+.main {
+  background-color: var(--white);
+  width: 1060px;
+  min-height: 702px;
+  border-radius: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px;
+  padding: 60px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1200px) {
+  .main {
+    width: 90%;
+    max-width: 900px;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr; /* Stack on mobile */
+    grid-template-rows: auto auto;
+    gap: 40px;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 20px;
+  }
+}
