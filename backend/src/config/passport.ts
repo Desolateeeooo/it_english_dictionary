@@ -1,6 +1,7 @@
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { mockUsers } from '../data/mockUsers';
+import { comparePasswords } from '../data/passwordHelperFuncs';
 
 passport.serializeUser((user: any, done) => {
   done(null, user.id);
@@ -14,17 +15,20 @@ passport.deserializeUser((id: number, done) => {
 passport.use(
   new LocalStrategy(
     { usernameField: 'email', passwordField: 'password' },
-    (email, password, done) => {
+    async (email, password, done) => {
       try {
         const user = mockUsers.find((u) => u.email === email);
 
-        if (!user) return done(null, false, { message: "User hasn't been found" });
+        if (!user || !user.password) return done(null, false, { message: "User hasn't been found" });
 
-        if (user.password !== password) {
-          return done(null, false, { message: 'The password is invalid!' });
+				const isValid = await comparePasswords(password, user.password);
+        
+        if (!isValid) {
+          return done(null, false, { message: 'Incorrect password.' });
         }
 
-        return done(null, user);
+				const { password: _, ...userWithoutPassword } = user;
+        return done(null, userWithoutPassword);
       } catch (error) {
         return done(error);
       }

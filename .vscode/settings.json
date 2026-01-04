@@ -25,6 +25,8 @@
   },
 	"prettier.requireConfig": true,
 	"cSpell.words": [
-		"dont"
+		"dont",
+		"Oickgx",
+		"securepass"
 	]
 }

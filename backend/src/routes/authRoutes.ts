@@ -1,4 +1,5 @@
-import { createUser } from '../data/mockUsers';
+import { passwordHash } from '../data/passwordHelperFuncs';
+import { createUser, mockUsers } from '../data/mockUsers';
 import express from 'express';
 import passport from 'passport';
 
@@ -20,6 +21,9 @@ router.use((req, _res, next) => {
 });
 
 router.post('/login', (req, res, next) => {
+  console.log('🔍 Checking mock users before login:');
+  console.log(JSON.stringify(mockUsers, null, 2));
+
   passport.authenticate('local', (err: Error, user: any, info: any) => {
     if (err) return next(err);
 
@@ -67,7 +71,9 @@ router.post('/logout', (req, res, next) => {
 router.post('/register', async (req, res) => {
   const { username, email, password } = req.body;
 
-  const newUser = await createUser({ username, email, password });
+  const hashedPassword = await passwordHash(password, 10);
+
+  const newUser = await createUser({ username, email, password: hashedPassword });
   if (newUser) {
     res.status(201).json({
       message: `User ${username} was successfully registered!`,
