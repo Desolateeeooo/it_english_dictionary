@@ -1,6 +1,6 @@
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
-import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
+// import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import { mockUsers } from '../data/mockUsers';
 import { comparePasswords } from '../data/passwordHelperFuncs';
 
@@ -37,5 +37,13 @@ passport.use(
     }
   )
 );
+
+// passport.use(new GoogleStrategy(
+// 	{
+// 		// TODO: Options for google strategy
+// 	}
+// ), () => {
+// 	// TODO: Passport callback function
+// })
 
 export default passport;
