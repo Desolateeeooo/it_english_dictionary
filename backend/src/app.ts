@@ -49,17 +49,6 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-// TEST ENDPOINT - BEFORE any other routes
-app.get('/api/test-cors', (req, res) => {
-  console.log('✅ Test CORS endpoint HIT!');
-  res.json({
-    message: 'CORS is working!',
-    timestamp: new Date().toISOString(),
-    sessionId: req.sessionID,
-  });
-});
-
 app.use('/api/auth', authRoutes);
 
 export default app;

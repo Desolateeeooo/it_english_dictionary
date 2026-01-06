@@ -84,4 +84,10 @@ router.post('/register', async (req, res) => {
   }
 });
 
+// TODO: Add auth with google
+
+router.get('/google', (req, res) => {
+
+});
+
 export default router;
