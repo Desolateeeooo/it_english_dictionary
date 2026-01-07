@@ -25,8 +25,11 @@
   },
 	"prettier.requireConfig": true,
 	"cSpell.words": [
-		"dont",
-		"Oickgx",
-		"securepass"
-	]
+		"dont"
+	],
+	  "cSpell.ignorePaths": [
+    "**/*.lock.json",
+    "**/*.json",
+		"**/*.env",
+  ],
 }
