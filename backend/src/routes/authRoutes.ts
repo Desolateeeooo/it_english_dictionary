@@ -86,8 +86,12 @@ router.post('/register', async (req, res) => {
 
 // TODO: Add auth with google
 
-// router.get('/google', (req, res) => {
+router.get('/google', passport.authenticate('google', {
+	scope: ['profile', 'email']
+}));
 
-// });
+router.get('google/redirect', passport.authenticate('google'), (req, res) => {
+	
+})
 
 export default router;

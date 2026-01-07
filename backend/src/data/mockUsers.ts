@@ -5,6 +5,8 @@ export interface User {
   username: string;
   email: string;
   password: string | null;
+	provider?: 'Google' | 'Github' | 'Yandex';
+	providerId?: string;
 }
 
 export let mockUsers: User[] = [];

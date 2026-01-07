@@ -1,6 +1,6 @@
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
-// import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import { mockUsers } from '../data/mockUsers';
 import { comparePasswords } from '../data/passwordHelperFuncs';
 
@@ -19,7 +19,7 @@ passport.use(
     async (email, password, done) => {
       try {
         const user = mockUsers.find((u) => u.email === email);
-
+				
         if (!user || !user.password)
           return done(null, false, { message: "User hasn't been found" });
 
@@ -38,12 +38,19 @@ passport.use(
   )
 );
 
-// passport.use(new GoogleStrategy(
-// 	{
-// 		// TODO: Options for google strategy
-// 	}
-// ), () => {
-// 	// TODO: Passport callback function
-// })
+// TODO: Google Auth 2.0
+
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      callbackURL: '/auth/google/redirect',
+    },
+    (accessToken, refreshToken, profile, done) => {
+			console.log('passport google callback fired')
+		}
+  )
+);
 
 export default passport;
