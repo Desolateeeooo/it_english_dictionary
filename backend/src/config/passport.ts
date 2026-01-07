@@ -47,7 +47,7 @@ passport.use(
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
       callbackURL: '/auth/google/redirect',
     },
-    async (accessToken, refreshToken, profile, done) => {
+    async (_accessToken, _refreshToken, profile, done) => {
       const currentUser = mockUsers.find((u) => u.providerId === profile.id);
 
       if (currentUser) {
