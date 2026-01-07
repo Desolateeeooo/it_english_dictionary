@@ -48,7 +48,7 @@ console.log(mockUsers);
 //   },
 // ];
 
-const getNewId = (arr: User[]) => {
+export const getNewId = (arr: User[]) => {
   return arr.length + 1;
 };
 

@@ -1,7 +1,7 @@
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
-import { mockUsers } from '../data/mockUsers';
+import { createUser, getNewId, mockUsers, User } from '../data/mockUsers';
 import { comparePasswords } from '../data/passwordHelperFuncs';
 
 passport.serializeUser((user: any, done) => {
@@ -19,7 +19,7 @@ passport.use(
     async (email, password, done) => {
       try {
         const user = mockUsers.find((u) => u.email === email);
-				
+
         if (!user || !user.password)
           return done(null, false, { message: "User hasn't been found" });
 
@@ -47,9 +47,37 @@ passport.use(
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
       callbackURL: '/auth/google/redirect',
     },
-    (accessToken, refreshToken, profile, done) => {
-			console.log('passport google callback fired')
-		}
+    async (accessToken, refreshToken, profile, done) => {
+      const currentUser = mockUsers.find((u) => u.providerId === profile.id);
+
+      if (currentUser) {
+        console.log(`User ${currentUser.email} already exists!`);
+				done(null, currentUser)
+      } else {
+				// check for the user email
+        if (profile.emails) {
+          const user: User = {
+            id: getNewId(mockUsers),
+            username: profile.displayName,
+            email: profile.emails[0].value,
+            password: null,
+            provider: 'Google',
+            providerId: profile.id,
+          };
+
+          const newUser = await createUser(user);
+					if (newUser) {
+						done(null, newUser);
+					} else {
+
+					}
+        } else {
+          console.log("Oops! Looks like you haven't provided your email address");
+        }
+      }
+
+      console.log('passport google callback fired');
+    }
   )
 );
 

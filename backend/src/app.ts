@@ -4,8 +4,10 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import authRoutes from './routes/authRoutes';
 import passport from 'passport';
+import * as crypto from "crypto";
 import { env, isProduction } from './config';
 import './config/passport';
+
 
 const app = express();
 
@@ -35,7 +37,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   session({
-    secret: env.SESSION_SECRET,
+    secret: crypto.randomBytes(10) || env.SESSION_SECRET,
     cookie: {
       maxAge: 1000 * 60 * 60 * 24,
       secure: isProduction,
